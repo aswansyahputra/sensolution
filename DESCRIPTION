@@ -7,3 +7,5 @@ Depends: R (>= 3.5.2)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/aswansyahputra/sensolution
+BugReports: https://github.com/aswansyahputra/sensolution/issues
