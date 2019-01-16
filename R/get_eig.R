@@ -1,3 +1,12 @@
+#' Get eigenvalues
+#'
+#' Function to augment eigenvalues from multivariate analysis
+#'
+#' @import dplyr magrittr
+#' @return dataframe
+#' @export
+
+
 get_eig <- function(.res) {
   if (missing(.res)) {
     stop("Data is not supplied", call. = FALSE)
@@ -13,6 +22,3 @@ get_eig <- function(.res) {
     ) %>%
     mutate(dim = str_replace_all(dim, "comp", "Dim"))
 }
-
-
-

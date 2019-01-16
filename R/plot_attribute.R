@@ -1,3 +1,12 @@
+#' Plot attribute
+#'
+#' Plot attribute on sensory space
+#'
+#' @import dplyr ggplot2 ggrepel
+#' @return a plot
+#' @export
+
+
 plot_attribute <- function(.res, axes = c(1, 2), main = "", lab.size = 4) {
   if (missing(.res)) {
     stop("Data is not supplied", call. = FALSE)
@@ -7,7 +16,7 @@ plot_attribute <- function(.res, axes = c(1, 2), main = "", lab.size = 4) {
 
   dims <- .res %>%
     extract2("eig") %>%
-    extract(,1) %>%
+    extract(, 1) %>%
     round(2) %>%
     str_c("Dim ", 1:length(.), " (", ., "%)")
 
@@ -25,13 +34,13 @@ plot_attribute <- function(.res, axes = c(1, 2), main = "", lab.size = 4) {
         ggplot(aes_string(x = names(df_main)[axes[1]], y = names(df_main)[axes[2]])) +
         geom_text_repel(aes(label = attribute), size = lab.size) +
         geom_segment(aes_string(x = 0, y = 0, xend = names(df_main)[axes[1]], yend = names(df_main)[axes[2]]),
-                     arrow = arrow(length = unit(0.3, "cm"))
+          arrow = arrow(length = unit(0.3, "cm"))
         ) +
         annotate("path",
-                 linetype = 2,
-                 col = "grey40",
-                 x = 0 + 1 * cos(seq(0, 2 * pi, length.out = 100)),
-                 y = 0 + 1 * sin(seq(0, 2 * pi, length.out = 100))
+          linetype = 2,
+          col = "grey40",
+          x = 0 + 1 * cos(seq(0, 2 * pi, length.out = 100)),
+          y = 0 + 1 * sin(seq(0, 2 * pi, length.out = 100))
         ) +
         geom_vline(xintercept = 0, lty = 2, col = "grey40") +
         geom_hline(yintercept = 0, lty = 2, col = "grey40") +
@@ -67,16 +76,16 @@ plot_attribute <- function(.res, axes = c(1, 2), main = "", lab.size = 4) {
         geom_text_repel(aes(label = attribute), size = lab.size) +
         geom_text_repel(aes(label = attribute), size = lab.size, col = "blue", data = df_sup) +
         geom_segment(aes_string(x = 0, y = 0, xend = names(df_main)[axes[1]], yend = names(df_main)[axes[2]]),
-                     arrow = arrow(length = unit(0.3, "cm"))
+          arrow = arrow(length = unit(0.3, "cm"))
         ) +
         geom_segment(aes_string(x = 0, y = 0, xend = names(df_sup)[axes[1]], yend = names(df_sup)[axes[2]]),
-                     arrow = arrow(length = unit(0.3, "cm")), col = "blue", data = df_sup
+          arrow = arrow(length = unit(0.3, "cm")), col = "blue", data = df_sup
         ) +
         annotate("path",
-                 linetype = 2,
-                 col = "grey40",
-                 x = 0 + 1 * cos(seq(0, 2 * pi, length.out = 100)),
-                 y = 0 + 1 * sin(seq(0, 2 * pi, length.out = 100))
+          linetype = 2,
+          col = "grey40",
+          x = 0 + 1 * cos(seq(0, 2 * pi, length.out = 100)),
+          y = 0 + 1 * sin(seq(0, 2 * pi, length.out = 100))
         ) +
         geom_vline(xintercept = 0, lty = 2, col = "grey40") +
         geom_hline(yintercept = 0, lty = 2, col = "grey40") +
