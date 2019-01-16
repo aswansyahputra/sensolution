@@ -24,5 +24,4 @@ Perform PCA on dataframe
 \examples{
 sensochoc_means \%>\% do_pca(product = "Product")
 do_pca(sensochoc_means, product = "Product")
-
 }
