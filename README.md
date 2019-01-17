@@ -1,5 +1,7 @@
 # sensolution
 
+[![Travis build status](https://travis-ci.org/aswansyahputra/sensolution.svg?branch=master)](https://travis-ci.org/aswansyahputra/sensolution)
+
 The goal of sensolution is to ...
 
 ## Installation
@@ -19,4 +21,4 @@ This is a basic example which shows you how to solve a common problem:
 ```
 
 ## Code of conduct
-Please note that the [34m'sensolution'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the [34m'sensolution'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.

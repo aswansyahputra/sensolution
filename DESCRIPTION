@@ -19,6 +19,7 @@ Imports:
     crossdes,
     sensR,
     BradleyTerry2,
+    FactoMineR,
     SensoMineR
 RoxygenNote: 6.1.1
 Suggests: 
